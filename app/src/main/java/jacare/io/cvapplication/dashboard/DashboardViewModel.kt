@@ -1,6 +1,8 @@
 package jacare.io.cvapplication.dashboard
 
 import io.reactivex.disposables.Disposable
+import jacare.io.cvapplication.domain.LoadProfileUsecase
+import jacare.io.cvapplication.model.profile.PersonProfile
 import jacare.io.cvapplication.model.profile.ProfileRepository
 import jacare.io.cvapplication.model.skill.SkillRepository
 
@@ -27,11 +29,20 @@ class DashboardViewModel(
         }
 
     private fun loadProfile() = profileRepository.fetchProfile()
+        .execute()
         .subscribe { success, error ->
             if(error == null) {
-                state.portrait.set(success.portrait)
+                updateProfile(success)
                 profileLoadDisposable?.dispose()
                 profileLoadDisposable = null
             }
         }
+
+    private fun updateProfile(profile: LoadProfileUsecase.Effect){
+        state.portrait.set(profile.portraitUrl)
+        state.name.set(profile.name)
+        state.location.set(profile.location)
+        state.role.set(profile.role)
+        state.shortBio.set(profile.shortBio)
+    }
 }

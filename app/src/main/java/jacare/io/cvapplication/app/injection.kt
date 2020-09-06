@@ -2,12 +2,14 @@ package jacare.io.cvapplication.app
 
 import android.content.Context
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import dagger.Component
 import dagger.Module
 import dagger.Provides
 import jacare.io.cvapplication.BuildConfig
 import jacare.io.cvapplication.dashboard.DashboardComponent
 import jacare.io.cvapplication.dashboard.DashboardModule
+import jacare.io.cvapplication.model.profile.ProfileApi
 import jacare.io.cvapplication.model.profile.ProfileRepository
 import jacare.io.cvapplication.model.profile.ProfileRepositoryImpl
 import jacare.io.cvapplication.model.skill.SkillRepository
@@ -39,16 +41,26 @@ class AppModule(private val appContext: Context){
 
     @Provides
     @Singleton
-    fun provideProfileRepository(): ProfileRepository =
-        ProfileRepositoryImpl()
+    fun provideProfileRepository(profileApi: ProfileApi): ProfileRepository =
+        ProfileRepositoryImpl(profileApi)
 
     @Provides
     @Singleton
-    fun provideConverterFactory(gson: Gson) = GsonConverterFactory.create(gson)
+    fun provideProfileApi(retrofit: Retrofit): ProfileApi = retrofit.create(ProfileApi::class.java)
 
     @Provides
     @Singleton
-    fun provideOkHttpClient() = OkHttpClient.Builder()
+    fun provideGson(): Gson = GsonBuilder()
+        .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+        .create()
+
+    @Provides
+    @Singleton
+    fun provideConverterFactory(gson: Gson): GsonConverterFactory = GsonConverterFactory.create(gson)
+
+    @Provides
+    @Singleton
+    fun provideOkHttpClient(): OkHttpClient = OkHttpClient.Builder()
         .connectTimeout(120, TimeUnit.SECONDS)
         .readTimeout(120, TimeUnit.SECONDS)
         .addInterceptor(
@@ -65,7 +77,7 @@ class AppModule(private val appContext: Context){
     fun provideRetrofit(
         client: OkHttpClient,
         converterFactory: GsonConverterFactory
-    ) = Retrofit.Builder()
+    ): Retrofit = Retrofit.Builder()
         .baseUrl(BuildConfig.BASE_URL)
         .client(client)
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

@@ -30,7 +30,7 @@
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tomek Spędzia"
+            android:text="@{state.name}"
             app:layout_constraintStart_toEndOf="@+id/portrait"
             android:layout_marginStart="32dp"
             android:textSize="24sp"
@@ -47,7 +47,7 @@
             android:layout_marginTop="8dp"
             android:textColor="#000"
             android:textSize="16sp"
-            android:text="Android developer"/>
+            android:text="@{state.role}"/>
         <ImageView
             android:id="@+id/iconLocation"
             android:layout_width="wrap_content"
@@ -66,7 +66,7 @@
             android:textSize="16sp"
             android:layout_marginBottom="4dp"
             android:textColor="#625F63"
-            android:text="Kraków, Poland"
+            android:text="@{state.location}"
             android:layout_marginStart="4dp" />
         <TextView
             android:id="@+id/bio"
