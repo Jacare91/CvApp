@@ -15,26 +15,28 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minWidth="80dp"
             app:cardCornerRadius="12dp"
             app:cardBackgroundColor="#fff"
             android:layout_margin="4dp"
             app:cardElevation="8dp">
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content">
-                <ImageView
+                <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/icon"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_marginTop="8dp"
-                    app:layout_constraintStart_toStartOf="@id/name"
-                    app:layout_constraintEnd_toEndOf="@id/name"
+                    url="@{iconUrl}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
                 <TextView
                     android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Android SDK"
+                    android:text="@{nameText}"
                     android:textColor="#000"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="8dp"

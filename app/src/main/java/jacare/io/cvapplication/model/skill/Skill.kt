@@ -1,4 +1,4 @@
-package jacare.io.cvapplication
+package jacare.io.cvapplication.model.skill
 
 class Skill(
     val name: String,

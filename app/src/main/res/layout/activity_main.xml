@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
     <data>
+        <variable
+            name="state"
+            type="jacare.io.cvapplication.dashboard.DashboardContract.State" />
+        <variable
+            name="viewModel"
+            type="jacare.io.cvapplication.dashboard.DashboardContract.ViewModel" />
+        <variable
+            name="adapter"
+            type="jacare.io.cvapplication.dashboard.SkillAdapter" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,7 +22,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_margin="32dp"
-            android:src="#000"
+            url="@{state.portrait}"
             app:roundedCornerRadius="16dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -24,7 +33,6 @@
             android:text="Tomek Spędzia"
             app:layout_constraintStart_toEndOf="@+id/portrait"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#000"
@@ -36,7 +44,7 @@
             app:layout_constraintStart_toEndOf="@id/portrait"
             app:layout_constraintTop_toBottomOf="@+id/name"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:textColor="#000"
             android:textSize="16sp"
             android:text="Android developer"/>
@@ -88,7 +96,11 @@
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="horizontal"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             app:layout_constraintTop_toBottomOf="@id/titleSkills"
+            adapter="@{adapter}"
+            items="@{state.skills}"
             android:layout_marginTop="8dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

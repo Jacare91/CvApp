@@ -3,7 +3,7 @@ package jacare.io.cvapplication.dashboard
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import jacare.io.cvapplication.Skill
+import jacare.io.cvapplication.model.skill.Skill
 import jacare.io.cvapplication.databinding.ItemSkillBinding
 
 class SkillAdapter : RecyclerView.Adapter<SkillViewHolder>() {
