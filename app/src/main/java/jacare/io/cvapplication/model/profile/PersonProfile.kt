@@ -6,5 +6,6 @@ class PersonProfile(
     val role: String,
     val city: String,
     val country: String,
-    val shortBio: String
+    val shortBio: String,
+    val knownSkills: String
 )
