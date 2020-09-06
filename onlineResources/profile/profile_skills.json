@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Android",
+    "icon": "icons/Android-Logo.png"
+  },
+  {
+    "name": "GIT",
+    "icon": "icons/Git-Icon-1788C.png"
+  },
+  {
+    "name": "RxJava",
+    "icon": "icons/RxJava-Logo.png"
+  },
+  {
+    "name": "Kotlin",
+    "icon": "icons/Kotlin-logo.png"
+  },
+  {
+    "name": "Java",
+    "icon": "icons/javaLogo.png"
+  },
+  {
+    "name": "Scrum",
+    "icon": "icons/scrumLogo.png"
+  }
+]
