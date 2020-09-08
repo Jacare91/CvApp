@@ -9,11 +9,12 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 interface ExperienceRepository {
-    fun loadExperiences(): Single<List<ExperienceShortcut>>
+    fun loadExperiencesList(): Single<List<ExperienceShortcut>>
+    fun loadExperience(id: Long): Single<ExperienceDetails>
 }
 
 class ExperienceRepositoryImpl(private val api: ExperienceApi) : ExperienceRepository {
-    override fun loadExperiences() = api.getExperiences()
+    override fun loadExperiencesList() = api.getExperiences()
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
         .flatMap { response ->
@@ -23,7 +24,11 @@ class ExperienceRepositoryImpl(private val api: ExperienceApi) : ExperienceRepos
                     val positionString = "${exp.position}, ${exp.companyName}"
                     val startPeriod = exp.startDate?.let { dateFormat.format(it) } ?: ""
                     val endPeriod = exp.endDate?.let { dateFormat.format(it) } ?: ""
-                    ExperienceShortcut(positionString, "$startPeriod - $endPeriod")
+                    ExperienceShortcut(exp.id, positionString, "$startPeriod - $endPeriod")
                 }.toList()
         }
+
+    override fun loadExperience(id: Long) = api.getExperience(id)
+        .subscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread())
 }

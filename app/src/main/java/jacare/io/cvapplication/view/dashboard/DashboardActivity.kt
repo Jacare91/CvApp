@@ -1,14 +1,18 @@
-package jacare.io.cvapplication.dashboard
+package jacare.io.cvapplication.view.dashboard
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import io.reactivex.disposables.Disposable
 import jacare.io.cvapplication.R
 import jacare.io.cvapplication.app.CvApp
 import jacare.io.cvapplication.databinding.ActivityMainBinding
+import jacare.io.cvapplication.view.experience.ExperienceActivity
 import javax.inject.Inject
 
 class DashboardActivity : AppCompatActivity() {
+    private var experienceDisposable: Disposable? = null
+
     @Inject
     lateinit var state: DashboardContract.State
 
@@ -35,7 +39,11 @@ class DashboardActivity : AppCompatActivity() {
             skillAdapter = this@DashboardActivity.skillAdapter
             experienceAdapter = this@DashboardActivity.experienceAdapter
         }
-        
+
+        experienceDisposable = experienceAdapter.onClick
+            .map { ExperienceActivity.getStartIntent(this, it) }
+            .subscribe { startActivity(it) }
+
         viewModel.initialize()
     }
 }

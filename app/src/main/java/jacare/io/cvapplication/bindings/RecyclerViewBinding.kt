@@ -2,8 +2,8 @@ package jacare.io.cvapplication.bindings
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import jacare.io.cvapplication.dashboard.ExperienceAdapter
-import jacare.io.cvapplication.dashboard.SkillAdapter
+import jacare.io.cvapplication.view.dashboard.ExperienceAdapter
+import jacare.io.cvapplication.view.dashboard.SkillAdapter
 import jacare.io.cvapplication.domain.experience.ExperienceShortcut
 import jacare.io.cvapplication.domain.skill.SkillShortcut
 import jacare.io.cvapplication.model.skill.Skill

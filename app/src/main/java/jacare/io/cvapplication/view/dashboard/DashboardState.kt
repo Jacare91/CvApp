@@ -1,4 +1,4 @@
-package jacare.io.cvapplication.dashboard
+package jacare.io.cvapplication.view.dashboard
 
 import androidx.databinding.ObservableField
 import jacare.io.cvapplication.domain.experience.ExperienceShortcut

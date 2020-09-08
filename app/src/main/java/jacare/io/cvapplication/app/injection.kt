@@ -7,8 +7,8 @@ import dagger.Component
 import dagger.Module
 import dagger.Provides
 import jacare.io.cvapplication.BuildConfig
-import jacare.io.cvapplication.dashboard.DashboardComponent
-import jacare.io.cvapplication.dashboard.DashboardModule
+import jacare.io.cvapplication.view.dashboard.DashboardComponent
+import jacare.io.cvapplication.view.dashboard.DashboardModule
 import jacare.io.cvapplication.model.experience.ExperienceApi
 import jacare.io.cvapplication.model.experience.ExperienceRepository
 import jacare.io.cvapplication.model.experience.ExperienceRepositoryImpl
@@ -19,6 +19,8 @@ import jacare.io.cvapplication.model.skill.Skill
 import jacare.io.cvapplication.model.skill.SkillRepository
 import jacare.io.cvapplication.model.skill.SkillRepositoryImpl
 import jacare.io.cvapplication.model.skill.SkillsApi
+import jacare.io.cvapplication.view.experience.ExperienceComponent
+import jacare.io.cvapplication.view.experience.ExperienceModule
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -31,6 +33,7 @@ import javax.inject.Singleton
 @Singleton
 interface AppComponent{
     fun plus(module: DashboardModule): DashboardComponent
+    fun plus(module: ExperienceModule): ExperienceComponent
 }
 
 @Module
@@ -71,7 +74,7 @@ class AppModule(private val appContext: Context){
     @Provides
     @Singleton
     fun provideGson(): Gson = GsonBuilder()
-        .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+        .setDateFormat("mm.YYYY")
         .create()
 
     @Provides

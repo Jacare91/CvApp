@@ -1,4 +1,4 @@
-package jacare.io.cvapplication.dashboard
+package jacare.io.cvapplication.view.dashboard
 
 import io.reactivex.disposables.Disposable
 import jacare.io.cvapplication.domain.profile.LoadProfileUsecase
@@ -41,7 +41,7 @@ class DashboardViewModel(
             }
         }
 
-    private fun loadExperiences() = experienceRepository.loadExperiences()
+    private fun loadExperiences() = experienceRepository.loadExperiencesList()
         .subscribe { success, error ->
             if(error == null) {
                 state.experiences.set(success)

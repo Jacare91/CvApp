@@ -1,4 +1,4 @@
-package jacare.io.cvapplication.dashboard
+package jacare.io.cvapplication.view.dashboard
 
 import dagger.Module
 import dagger.Provides
@@ -18,15 +18,18 @@ interface DashboardComponent {
 class DashboardModule {
     @Provides
     @ActivityScope
-    fun provideSkillAdapter() = SkillAdapter()
+    fun provideSkillAdapter() =
+        SkillAdapter()
 
     @Provides
     @ActivityScope
-    fun provideExperienceAdapter() = ExperienceAdapter()
+    fun provideExperienceAdapter() =
+        ExperienceAdapter()
 
     @Provides
     @ActivityScope
-    fun provideDashboardState(): DashboardContract.State = DashboardState()
+    fun provideDashboardState(): DashboardContract.State =
+        DashboardState()
 
     @Provides
     @ActivityScope
@@ -35,10 +38,11 @@ class DashboardModule {
         skillRepository: SkillRepository,
         profileRepository: ProfileRepository,
         experienceRepository: ExperienceRepository
-    ): DashboardContract.ViewModel = DashboardViewModel(
-        state,
-        skillRepository,
-        profileRepository,
-        experienceRepository
-    )
+    ): DashboardContract.ViewModel =
+        DashboardViewModel(
+            state,
+            skillRepository,
+            profileRepository,
+            experienceRepository
+        )
 }

@@ -29,7 +29,7 @@ class LoadSkillsUsecaseImpl(
             .flatMap { list ->
                 Observable.fromIterable(list)
                     .map {
-                        SkillShortcut(it.name, "${BuildConfig.BASE_URL}${it.icon}", "")
+                        SkillShortcut(it.name, "${BuildConfig.BASE_URL}icons/${it.icon}", "")
                     }.toList()
             }
     }
