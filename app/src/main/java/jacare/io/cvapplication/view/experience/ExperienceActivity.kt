@@ -4,8 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import jacare.io.cvapplication.R
 import jacare.io.cvapplication.app.CvApp
+import jacare.io.cvapplication.databinding.ActivityExperienceBinding
 import javax.inject.Inject
 
 class ExperienceActivity : AppCompatActivity() {
@@ -20,7 +22,14 @@ class ExperienceActivity : AppCompatActivity() {
             .plus(ExperienceModule())
             .inject(this)
 
-        setContentView(R.layout.activity_experience)
+        DataBindingUtil.setContentView<ActivityExperienceBinding>(
+            this,
+            R.layout.activity_experience
+        ).apply {
+            state = this@ExperienceActivity.state
+            viewModel = this@ExperienceActivity.viewModel
+        }
+
         viewModel.initialize(intent.getLongExtra(KEY_ID, -1))
     }
 

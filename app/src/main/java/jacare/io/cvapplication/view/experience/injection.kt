@@ -24,7 +24,8 @@ class ExperienceModule {
     @Provides
     @ActivityScope
     fun provideExperienceViewModel(
+        state: ExperienceContract.State,
         experienceRepository: ExperienceRepository
     ): ExperienceContract.ViewModel =
-        ExperienceViewModel(experienceRepository)
+        ExperienceViewModel(state, experienceRepository)
 }

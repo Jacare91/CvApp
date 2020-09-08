@@ -22,8 +22,8 @@ class ExperienceRepositoryImpl(private val api: ExperienceApi) : ExperienceRepos
             Observable.fromIterable(response)
                 .map { exp ->
                     val positionString = "${exp.position}, ${exp.companyName}"
-                    val startPeriod = exp.startDate?.let { dateFormat.format(it) } ?: ""
-                    val endPeriod = exp.endDate?.let { dateFormat.format(it) } ?: ""
+                    val startPeriod = dateFormat.format(exp.startDate)
+                    val endPeriod = dateFormat.format(exp.endDate)
                     ExperienceShortcut(exp.id, positionString, "$startPeriod - $endPeriod")
                 }.toList()
         }

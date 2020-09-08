@@ -43,10 +43,10 @@
         </LinearLayout>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/icon"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_margin="32dp"
-            android:padding="4dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="8dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,8 +55,80 @@
             <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/logo"
                 url="@{state.logoUrl}"
-                android:layout_width="120dp"
-                android:layout_height="120dp" />
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:actualImageScaleType="fitCenter"/>
         </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/company"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/icon"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="32dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:gravity="start"
+            android:text="@{state.companyName}"/>
+        <TextView
+            android:id="@+id/role"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/icon"
+            app:layout_constraintBottom_toBottomOf="@+id/icon"
+            android:layout_marginStart="32dp"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:gravity="start"
+            android:text="@{state.roleName}"/>
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/icon"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="8dp"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:gravity="start"
+            android:text="@{state.time}"/>
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/icon"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:maxLines="4"
+            android:text="@{state.time"
+            android:layout_marginTop="32dp"/>
+        <TextView
+            android:id="@+id/titleTech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:text="Skills"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/titleTech"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

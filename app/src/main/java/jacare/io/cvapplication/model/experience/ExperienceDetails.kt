@@ -7,8 +7,9 @@ class ExperienceDetails(
     val logoUrl: String,
     val position: String,
     val companyName: String,
-    val startDate: Date?,
-    val endDate: Date?,
+    val startDate: Date,
+    val endDate: Date,
+    val description: String,
     val mainProduct: AppItem,
     val otherProducts: List<AppItem>
 )

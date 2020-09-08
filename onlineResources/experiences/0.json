@@ -4,7 +4,8 @@
   "position": "Android developer",
   "companyName": "WebDoctor",
   "startDate": "01.2020",
-  "endDate": "07.2020",
+  "endDate": "08.2020",
+  "description": "I was developing support app for beauty clinics administrators. The technology we used involved rxJava2, Turbolinks, Retrofit, Dagger2 and Kotlin. Interesting feature to implement was Barcode\nscanner using Mobile Vision API.",
   "mainProduct": {
     "name": "Lintrath Admin",
     "url": "https://play.google.com/store/apps/details?id=therapie.nuasolutions.com&hl=en_US"
