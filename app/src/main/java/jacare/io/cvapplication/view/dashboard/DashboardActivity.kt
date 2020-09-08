@@ -8,6 +8,7 @@ import jacare.io.cvapplication.R
 import jacare.io.cvapplication.app.CvApp
 import jacare.io.cvapplication.databinding.ActivityMainBinding
 import jacare.io.cvapplication.view.experience.ExperienceActivity
+import jacare.io.cvapplication.view.experience.ExperienceAdapter
 import javax.inject.Inject
 
 class DashboardActivity : AppCompatActivity() {

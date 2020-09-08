@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import jacare.io.cvapplication.R
 import jacare.io.cvapplication.app.CvApp
 import jacare.io.cvapplication.databinding.ActivityExperienceBinding
+import jacare.io.cvapplication.view.dashboard.SkillAdapter
 import javax.inject.Inject
 
 class ExperienceActivity : AppCompatActivity() {
@@ -15,6 +16,8 @@ class ExperienceActivity : AppCompatActivity() {
     internal lateinit var state: ExperienceContract.State
     @Inject
     internal lateinit var viewModel: ExperienceContract.ViewModel
+    @Inject
+    internal lateinit var technologiesAdapter: SkillAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +31,7 @@ class ExperienceActivity : AppCompatActivity() {
         ).apply {
             state = this@ExperienceActivity.state
             viewModel = this@ExperienceActivity.viewModel
+            adapter = this@ExperienceActivity.technologiesAdapter
         }
 
         viewModel.initialize(intent.getLongExtra(KEY_ID, -1))

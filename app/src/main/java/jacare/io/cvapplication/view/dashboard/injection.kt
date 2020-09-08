@@ -7,6 +7,7 @@ import jacare.io.cvapplication.model.experience.ExperienceRepository
 import jacare.io.cvapplication.model.profile.ProfileRepository
 import jacare.io.cvapplication.model.skill.SkillRepository
 import jacare.io.cvapplication.scopes.ActivityScope
+import jacare.io.cvapplication.view.experience.ExperienceAdapter
 
 @Subcomponent(modules = [DashboardModule::class])
 @ActivityScope

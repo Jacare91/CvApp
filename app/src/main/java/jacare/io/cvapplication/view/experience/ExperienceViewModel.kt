@@ -3,6 +3,7 @@ package jacare.io.cvapplication.view.experience
 import io.reactivex.disposables.Disposable
 import jacare.io.cvapplication.BuildConfig
 import jacare.io.cvapplication.domain.experience.ExperienceShortcut
+import jacare.io.cvapplication.domain.skill.SkillShortcut
 import jacare.io.cvapplication.model.experience.ExperienceRepository
 import java.text.SimpleDateFormat
 import java.util.*
@@ -28,6 +29,9 @@ class ExperienceViewModel(
                     state.roleName.set(success.position)
                     state.time.set(timespan)
                     state.description.set(success.description)
+                    state.technologies.set(success.technologies.map {
+                        SkillShortcut(it.name, "", "")
+                    })
                 }
             }
     }

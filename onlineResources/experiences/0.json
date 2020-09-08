@@ -9,5 +9,19 @@
   "mainProduct": {
     "name": "Lintrath Admin",
     "url": "https://play.google.com/store/apps/details?id=therapie.nuasolutions.com&hl=en_US"
-  }
+  },
+  "technologies": [
+    {
+      "name": "Java"
+    },
+    {
+      "name": "kotlin"
+    },
+    {
+      "name": "Dagger2"
+    },
+    {
+      "name": "RxJava"
+    }
+  ]
 }

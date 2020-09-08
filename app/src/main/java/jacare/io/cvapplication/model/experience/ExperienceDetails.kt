@@ -1,5 +1,6 @@
 package jacare.io.cvapplication.model.experience
 
+import jacare.io.cvapplication.model.skill.Skill
 import java.util.*
 
 class ExperienceDetails(
@@ -11,7 +12,8 @@ class ExperienceDetails(
     val endDate: Date,
     val description: String,
     val mainProduct: AppItem,
-    val otherProducts: List<AppItem>
+    val otherProducts: List<AppItem>,
+    val technologies: List<Skill>
 )
 
 class AppItem(

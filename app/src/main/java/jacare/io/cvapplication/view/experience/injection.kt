@@ -7,6 +7,7 @@ import jacare.io.cvapplication.model.experience.ExperienceRepository
 import jacare.io.cvapplication.model.profile.ProfileRepository
 import jacare.io.cvapplication.model.skill.SkillRepository
 import jacare.io.cvapplication.scopes.ActivityScope
+import jacare.io.cvapplication.view.dashboard.SkillAdapter
 
 @Subcomponent(modules = [ExperienceModule::class])
 @ActivityScope
@@ -18,8 +19,11 @@ interface ExperienceComponent {
 class ExperienceModule {
     @Provides
     @ActivityScope
-    fun provideExperienceState(): ExperienceContract.State =
-        ExperienceState()
+    fun provideSkillsAdapter() = SkillAdapter()
+
+    @Provides
+    @ActivityScope
+    fun provideExperienceState(): ExperienceContract.State = ExperienceState()
 
     @Provides
     @ActivityScope

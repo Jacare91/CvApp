@@ -1,4 +1,4 @@
-package jacare.io.cvapplication.view.dashboard
+package jacare.io.cvapplication.view.experience
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

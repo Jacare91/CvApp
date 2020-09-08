@@ -12,7 +12,7 @@
             type="jacare.io.cvapplication.view.dashboard.SkillAdapter" />
         <variable
             name="experienceAdapter"
-            type="jacare.io.cvapplication.view.dashboard.ExperienceAdapter" />
+            type="jacare.io.cvapplication.view.experience.ExperienceAdapter" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"

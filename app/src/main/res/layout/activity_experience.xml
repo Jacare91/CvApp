@@ -8,6 +8,9 @@
         <variable
             name="viewModel"
             type="jacare.io.cvapplication.view.experience.ExperienceContract.ViewModel" />
+        <variable
+            name="adapter"
+            type="jacare.io.cvapplication.view.dashboard.SkillAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -108,7 +111,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:maxLines="4"
-            android:text="@{state.time"
+            android:text="@{state.description}"
             android:layout_marginTop="32dp"/>
         <TextView
             android:id="@+id/titleTech"
@@ -126,6 +129,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/titleTech"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            adapter="@{adapter}"
+            items="@{state.technologies}"
             android:layout_marginTop="24dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"/>
