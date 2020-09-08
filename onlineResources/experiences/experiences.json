@@ -1,0 +1,44 @@
+[
+  {
+    "position": "Android developer",
+    "companyName": "WebDoctor",
+    "startDate": "01.2020",
+    "endDate": "07.2020"
+  },
+  {
+    "position": "Android developer",
+    "companyName": "Dynaminds",
+    "startDate": "03.2019",
+    "endDate": "11.2019"
+  },
+  {
+    "position": "Android developer",
+    "companyName": "Corelogic",
+    "startDate": "03.2018",
+    "endDate": "03.2019"
+  },
+  {
+    "position": "Android developer",
+    "companyName": "Akra",
+    "startDate": "12.2017",
+    "endDate": "03.2018"
+  },
+  {
+    "position": "Android developer",
+    "companyName": "Epicode",
+    "startDate": "12.2016",
+    "endDate": "10.2017"
+  },
+  {
+    "position": "Android developer",
+    "companyName": "Comarch",
+    "startDate": "07.2015",
+    "endDate": "05.2016"
+  },
+  {
+    "position": "Android developer",
+    "companyName": "IGE+XAO",
+    "startDate": "06.2014",
+    "endDate": "09.2014"
+  }
+]

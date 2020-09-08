@@ -1,22 +1,25 @@
 package jacare.io.cvapplication.dashboard
 
 import io.reactivex.disposables.Disposable
-import jacare.io.cvapplication.domain.LoadProfileUsecase
-import jacare.io.cvapplication.model.profile.PersonProfile
+import jacare.io.cvapplication.domain.profile.LoadProfileUsecase
+import jacare.io.cvapplication.model.experience.ExperienceRepository
 import jacare.io.cvapplication.model.profile.ProfileRepository
 import jacare.io.cvapplication.model.skill.SkillRepository
 
 class DashboardViewModel(
     private val state: DashboardContract.State,
     private val skillRepository: SkillRepository,
-    private val profileRepository: ProfileRepository
+    private val profileRepository: ProfileRepository,
+    private val experienceRepository: ExperienceRepository
 ) : DashboardContract.ViewModel {
     private var skillsLoadDisposable: Disposable? = null
     private var profileLoadDisposable: Disposable? = null
+    private var experienceLoadDisposable: Disposable? = null
 
     override fun initialize() {
         skillsLoadDisposable = loadSkills()
         profileLoadDisposable = loadProfile()
+        experienceLoadDisposable = loadExperiences()
     }
 
     private fun loadSkills() = skillRepository.fetchSkills()
@@ -35,6 +38,15 @@ class DashboardViewModel(
                 updateProfile(success)
                 profileLoadDisposable?.dispose()
                 profileLoadDisposable = null
+            }
+        }
+
+    private fun loadExperiences() = experienceRepository.loadExperiences()
+        .subscribe { success, error ->
+            if(error == null) {
+                state.experiences.set(success)
+                skillsLoadDisposable?.dispose()
+                skillsLoadDisposable = null
             }
         }
 

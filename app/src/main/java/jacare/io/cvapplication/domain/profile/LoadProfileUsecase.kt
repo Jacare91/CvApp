@@ -1,4 +1,4 @@
-package jacare.io.cvapplication.domain
+package jacare.io.cvapplication.domain.profile
 
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -18,7 +18,8 @@ interface LoadProfileUsecase {
     fun execute(): Single<Effect>
 }
 
-class LoadProfileUsecaseImpl(private val api: ProfileApi) : LoadProfileUsecase {
+class LoadProfileUsecaseImpl(private val api: ProfileApi) :
+    LoadProfileUsecase {
     override fun execute(): Single<LoadProfileUsecase.Effect> {
         return api.getProfile()
             .subscribeOn(Schedulers.io())

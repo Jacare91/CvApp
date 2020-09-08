@@ -16,7 +16,10 @@ class DashboardActivity : AppCompatActivity() {
     lateinit var viewModel: DashboardContract.ViewModel
 
     @Inject
-    lateinit var adapter: SkillAdapter
+    lateinit var skillAdapter: SkillAdapter
+
+    @Inject
+    lateinit var experienceAdapter: ExperienceAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +32,8 @@ class DashboardActivity : AppCompatActivity() {
         ).apply {
             state = this@DashboardActivity.state
             viewModel = this@DashboardActivity.viewModel
-            adapter = this@DashboardActivity.adapter
+            skillAdapter = this@DashboardActivity.skillAdapter
+            experienceAdapter = this@DashboardActivity.experienceAdapter
         }
         
         viewModel.initialize()

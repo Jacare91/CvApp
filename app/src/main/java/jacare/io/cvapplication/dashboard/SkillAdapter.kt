@@ -5,9 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import jacare.io.cvapplication.model.skill.Skill
 import jacare.io.cvapplication.databinding.ItemSkillBinding
+import jacare.io.cvapplication.domain.skill.SkillShortcut
 
 class SkillAdapter : RecyclerView.Adapter<SkillViewHolder>() {
-    var items = mutableListOf<Skill>()
+    var items = mutableListOf<SkillShortcut>()
         set(value) {
             field.clear()
             field.addAll(value)
@@ -29,7 +30,7 @@ class SkillAdapter : RecyclerView.Adapter<SkillViewHolder>() {
 }
 
 class SkillViewHolder(val binding: ItemSkillBinding) : RecyclerView.ViewHolder(binding.root) {
-    fun bind(item: Skill){
+    fun bind(item: SkillShortcut){
         binding.iconUrl = item.iconUrl
         binding.nameText = item.name
         binding.executePendingBindings()

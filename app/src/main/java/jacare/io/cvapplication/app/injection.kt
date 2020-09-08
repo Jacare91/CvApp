@@ -9,11 +9,16 @@ import dagger.Provides
 import jacare.io.cvapplication.BuildConfig
 import jacare.io.cvapplication.dashboard.DashboardComponent
 import jacare.io.cvapplication.dashboard.DashboardModule
+import jacare.io.cvapplication.model.experience.ExperienceApi
+import jacare.io.cvapplication.model.experience.ExperienceRepository
+import jacare.io.cvapplication.model.experience.ExperienceRepositoryImpl
 import jacare.io.cvapplication.model.profile.ProfileApi
 import jacare.io.cvapplication.model.profile.ProfileRepository
 import jacare.io.cvapplication.model.profile.ProfileRepositoryImpl
+import jacare.io.cvapplication.model.skill.Skill
 import jacare.io.cvapplication.model.skill.SkillRepository
 import jacare.io.cvapplication.model.skill.SkillRepositoryImpl
+import jacare.io.cvapplication.model.skill.SkillsApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -36,8 +41,23 @@ class AppModule(private val appContext: Context){
 
     @Provides
     @Singleton
-    fun provideSkillsRepository(): SkillRepository =
-        SkillRepositoryImpl()
+    fun provideExperienceRepository(
+        api: ExperienceApi
+    ): ExperienceRepository = ExperienceRepositoryImpl(api)
+
+    @Provides
+    @Singleton
+    fun provideExperienceApi(retrofit: Retrofit): ExperienceApi = retrofit.create(ExperienceApi::class.java)
+
+    @Provides
+    @Singleton
+    fun provideSkillsRepository(
+        api: SkillsApi
+    ): SkillRepository = SkillRepositoryImpl(api)
+
+    @Provides
+    @Singleton
+    fun provideSkillsApi(retrofit: Retrofit): SkillsApi = retrofit.create(SkillsApi::class.java)
 
     @Provides
     @Singleton

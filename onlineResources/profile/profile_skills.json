@@ -1,26 +1,26 @@
 [
   {
     "name": "Android",
-    "icon": "icons/Android-Logo.png"
+    "icon": "Android-Logo.png"
   },
   {
     "name": "GIT",
-    "icon": "icons/Git-Icon-1788C.png"
+    "icon": "Git-Icon-1788C.png"
   },
   {
     "name": "RxJava",
-    "icon": "icons/RxJava-Logo.png"
+    "icon": "RxJava-Logo.png"
   },
   {
     "name": "Kotlin",
-    "icon": "icons/Kotlin-logo.png"
+    "icon": "Kotlin-logo.png"
   },
   {
     "name": "Java",
-    "icon": "icons/javaLogo.png"
+    "icon": "javaLogo.png"
   },
   {
     "name": "Scrum",
-    "icon": "icons/scrumLogo.png"
+    "icon": "scrumLogo.png"
   }
 ]
