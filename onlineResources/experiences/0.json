@@ -1,11 +1,12 @@
 {
   "id": 0,
+  "logoUrl": "experiences/icons/webdoctorLogo.png",
   "position": "Android developer",
   "companyName": "WebDoctor",
   "startDate": "01.2020",
   "endDate": "07.2020",
   "mainProduct": {
     "name": "Lintrath Admin",
-    "url": "https://\nplay.google.com/store/apps/details?\nid=therapie.nuasolutions.com&hl=en_US"
+    "url": "https://play.google.com/store/apps/details?id=therapie.nuasolutions.com&hl=en_US"
   }
 }

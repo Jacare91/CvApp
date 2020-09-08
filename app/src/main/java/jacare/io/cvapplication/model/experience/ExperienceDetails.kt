@@ -4,6 +4,7 @@ import java.util.*
 
 class ExperienceDetails(
     val id: Long,
+    val logoUrl: String,
     val position: String,
     val companyName: String,
     val startDate: Date?,

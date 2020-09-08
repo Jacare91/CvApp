@@ -31,7 +31,7 @@ class ExperienceActivity : AppCompatActivity() {
             context: Context,
             experienceId: Long
         ) = Intent(context, ExperienceActivity::class.java).apply {
-            experienceId to KEY_ID
+            putExtra(KEY_ID, experienceId)
         }
     }
 }
