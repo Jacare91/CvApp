@@ -11,6 +11,7 @@ class ExperienceDetails(
     val startDate: Date,
     val endDate: Date,
     val description: String,
+    val productAvailable: Boolean,
     val mainProduct: AppItem,
     val otherProducts: List<AppItem>,
     val technologies: List<Skill>

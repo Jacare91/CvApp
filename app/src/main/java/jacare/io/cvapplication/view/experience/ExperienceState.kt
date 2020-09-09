@@ -11,5 +11,6 @@ class ExperienceState(
     override val description: ObservableField<String> = ObservableField(),
     override val technologies: ObservableField<List<SkillShortcut>> = ObservableField(),
     override val productNameDescription: ObservableField<String> = ObservableField(),
+    override val displayProduct: ObservableField<Boolean> = ObservableField(false),
     override var productPackage: String = ""
 ) : ExperienceContract.State

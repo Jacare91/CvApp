@@ -13,6 +13,7 @@ class ExperienceContract {
         val description: ObservableField<String>
         val technologies: ObservableField<List<SkillShortcut>>
         val productNameDescription: ObservableField<String>
+        val displayProduct: ObservableField<Boolean>
         var productPackage: String
     }
 

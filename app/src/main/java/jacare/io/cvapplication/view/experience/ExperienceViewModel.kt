@@ -38,8 +38,12 @@ class ExperienceViewModel(
                         SkillShortcut(it.name, "", "")
                     })
 
-                    state.productNameDescription.set("The product I was working on was named ${success.mainProduct.name}. It's available on Google Play")
-                    state.productPackage = success.mainProduct.packageName
+                    state.displayProduct.set(success.productAvailable)
+
+                    if (success.productAvailable) {
+                        state.productNameDescription.set("The product I was working on was named ${success.mainProduct.name}")
+                        state.productPackage = success.mainProduct.packageName
+                    }
                 }
             }
     }
