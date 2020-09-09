@@ -1,0 +1,27 @@
+{
+  "id": 5,
+  "logoUrl": "experiences/icons/comarchLogo.png",
+  "position": "Junior android developer",
+  "companyName": "Comarch",
+  "startDate": "07.2015",
+  "endDate": "05.2016",
+  "description": "I was member of a team developing medical, supporting android app. My duties involved implementation of notification system, generating health questionnaires and handling bluetooth measuring instruments such as spirometer, glucometer and thermometer.",
+  "productAvailable": false,
+  "technologies": [
+    {
+      "name": "Butterknife",
+      "icon": ""
+    },
+    {
+      "name": "Java",
+      "icon": ""
+    }, {
+      "name": "Retrolambda",
+      "icon": ""
+    },
+    {
+      "name": "Retrofit",
+      "icon": ""
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": 4,
+  "logoUrl": "experiences/icons/epicodeLogo.png",
+  "position": "Android developer",
+  "companyName": "Epicode",
+  "startDate": "12.2016",
+  "endDate": "10.2017",
+  "description": "I was developing company management app Emplo. I successfully added multiple features such as requesting free days, knowledge tests and knowledge bases. I was also implementing some features in api using asp.net We were using Dagger2, Butterknife, RxJava, Retrofit and Retrolambda",
+  "productAvailable": true,
+  "mainProduct": {
+    "name": "Emplo mobile app",
+    "packageName": "com.emplo.emplo"
+  },
+  "technologies": [
+    {
+      "name": "Butterknife",
+      "icon": ""
+    },
+    {
+      "name": "Retrolambda",
+      "icon": ""
+    },
+    {
+      "name": "Java",
+      "icon": ""
+    },
+    {
+      "name": "Retrofit",
+      "icon": ""
+    }
+  ]
+}

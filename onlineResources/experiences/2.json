@@ -1,0 +1,32 @@
+{
+  "id": 2,
+  "logoUrl": "experiences/icons/corelogicLogo.png",
+  "position": "Android developer",
+  "companyName": "Core logic",
+  "startDate": "03.2018",
+  "endDate": "03.2019",
+  "description": "I was developing Traficar, car sharing android app. I was leading team responsible for android part of project. We successfully refactored whole application and I managed to mentor our new junior developer to quickly become significant part of our team.",
+  "productAvailable": true,
+  "mainProduct": {
+    "name": "Traficar",
+    "packageName": "pl.express.traficar"
+  },
+  "technologies": [
+    {
+      "name": "Kotlin",
+      "icon": ""
+    },
+    {
+      "name": "Dagger2",
+      "icon": ""
+    },
+    {
+      "name": "RxJava",
+      "icon": ""
+    },
+    {
+      "name": "Retrofit",
+      "icon": ""
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": 3,
+  "logoUrl": "experiences/icons/AkraLogo.png",
+  "position": "Android developer",
+  "companyName": "Akra",
+  "startDate": "12.207",
+  "endDate": "03.2018",
+  "description": "I was developing AR app, mobile tv player and telemedical tracker",
+  "productAvailable": false,
+  "technologies": [
+    {
+      "name": "Kotlin",
+      "icon": ""
+    },
+    {
+      "name": "Dagger2",
+      "icon": ""
+    },
+    {
+      "name": "RxJava",
+      "icon": ""
+    },
+    {
+      "name": "Retrofit",
+      "icon": ""
+    }
+  ]
+}

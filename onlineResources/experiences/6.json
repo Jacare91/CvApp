@@ -1,0 +1,27 @@
+{
+  "id": 6,
+  "logoUrl": "experiences/icons/igexaoLogo.png",
+  "position": "Junior C#/C++ developer",
+  "companyName": "IGE+XAO",
+  "startDate": "06.2014",
+  "endDate": "09.2014",
+  "description": "My responsibility was to reimplement old WinForms or MVC dialog windows to WPF.",
+  "productAvailable": false,
+  "technologies": [
+    {
+      "name": "Butterknife",
+      "icon": ""
+    },
+    {
+      "name": "Java",
+      "icon": ""
+    }, {
+      "name": "Retrolambda",
+      "icon": ""
+    },
+    {
+      "name": "Retrofit",
+      "icon": ""
+    }
+  ]
+}
