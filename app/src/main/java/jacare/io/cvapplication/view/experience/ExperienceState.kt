@@ -9,5 +9,7 @@ class ExperienceState(
     override val roleName: ObservableField<String> = ObservableField(),
     override val time: ObservableField<String> = ObservableField(),
     override val description: ObservableField<String> = ObservableField(),
-    override val technologies: ObservableField<List<SkillShortcut>> = ObservableField()
+    override val technologies: ObservableField<List<SkillShortcut>> = ObservableField(),
+    override val productNameDescription: ObservableField<String> = ObservableField(),
+    override var productPackage: String = ""
 ) : ExperienceContract.State

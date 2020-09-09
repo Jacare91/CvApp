@@ -1,8 +1,9 @@
 package jacare.io.cvapplication.view.experience
 
+import io.reactivex.Observable
 import io.reactivex.disposables.Disposable
+import io.reactivex.subjects.PublishSubject
 import jacare.io.cvapplication.BuildConfig
-import jacare.io.cvapplication.domain.experience.ExperienceShortcut
 import jacare.io.cvapplication.domain.skill.SkillShortcut
 import jacare.io.cvapplication.model.experience.ExperienceRepository
 import java.text.SimpleDateFormat
@@ -13,6 +14,10 @@ class ExperienceViewModel(
     private val repository: ExperienceRepository
 ) : ExperienceContract.ViewModel {
     private var loadExperienceDisposable: Disposable? = null
+
+    private val _openStore = PublishSubject.create<Pair<String, String>>()
+    override val openStore: Observable<Pair<String, String>>
+        get() = _openStore
 
     override fun initialize(id: Long) {
         loadExperienceDisposable = repository.loadExperience(id)
@@ -32,7 +37,16 @@ class ExperienceViewModel(
                     state.technologies.set(success.technologies.map {
                         SkillShortcut(it.name, "", "")
                     })
+
+                    state.productNameDescription.set("The product I was working on was named ${success.mainProduct.name}. It's available on Google Play")
+                    state.productPackage = success.mainProduct.packageName
                 }
             }
+    }
+
+    override fun viewProduct() {
+        val storeUrl = "market://details?id=${state.productPackage}"
+        val default = "https://play.google.com/store/apps/details?id=${state.productPackage}"
+        _openStore.onNext(Pair(storeUrl, default))
     }
 }

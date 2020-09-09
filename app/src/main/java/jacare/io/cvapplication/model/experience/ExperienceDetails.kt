@@ -18,5 +18,5 @@ class ExperienceDetails(
 
 class AppItem(
     val name: String,
-    val url: String
+    val packageName: String
 )
